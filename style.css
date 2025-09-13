@@ -34,7 +34,7 @@
 
     /* Hero section */
     .hero {
-      min-height: 115vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -101,12 +101,21 @@
       100% { transform: translateY(0) translateX(0); opacity: 0.5; }
     }
 
+    #undangan {
+  scroll-margin-top: -80px; /* adjust sesuai tinggi header/padding */
+}
+
+
     /* Responsive fix untuk HP */
 @media (max-width: 576px) {
   /* Biar semua section punya jarak cukup */
   .glass-card {
     margin: 15px 10px;
     padding: 20px;
+  }
+
+  .hero {
+    min-height: 120vh;
   }
 
   footer {
