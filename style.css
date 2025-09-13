@@ -1,0 +1,133 @@
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fffafc, #ffe6f0);
+      margin: 0;
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background pattern halus */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url(golden-wedding-rings-white-rose-from-wedding-bouquet.jpg) no-repeat center/cover;
+      opacity: 0.30;
+      z-index: -3;
+    }
+
+    /* Ornamen bunga pojokan */
+    .ornament {
+      position: fixed;
+      width: 200px;
+      z-index: -2;
+      opacity: 0.85;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+    }
+    .ornament.top-left { top: 0; left: 0;
+    transform: scaleX(-1); }
+    .ornament.top-right { top: 0; right: 0; transform: scaleY(-1); }
+    .ornament.bottom-left { bottom: 0; left: 0; transform: scaleX(-1); }
+    .ornament.bottom-right { bottom: 0; right: 0; transform: scaleX(-1, -1); }
+
+    /* Hero section */
+    .hero {
+      min-height: 115vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      color: #fff;
+      background: url(evie-s-bSVGnUCk4tk-unsplash.jpg) no-repeat center/cover;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    /* Glass card */
+    .glass-card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px rgba(31,38,135,0.2);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      margin: 20px 0;
+    }
+
+    h2, h3, h4 {
+      color: #d63384;
+      font-weight: 700;
+    }
+
+    .btn-custom {
+      background: linear-gradient(45deg, #ff6f91, #ff9671);
+      border: none;
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 25px;
+      transition: transform 0.3s;
+    }
+    .btn-custom:hover {
+      transform: scale(1.1);
+    }
+
+    .countdown {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff6f91;
+    }
+
+    /* Partikel kecil */
+    .particle {
+      position: absolute;
+      background: rgba(255,182,193,0.7);
+      border-radius: 50%;
+      animation: float 15s infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); opacity: 0.5; }
+      50% { transform: translateY(-200px) translateX(60px); opacity: 1; }
+      100% { transform: translateY(0) translateX(0); opacity: 0.5; }
+    }
+
+    /* Responsive fix untuk HP */
+@media (max-width: 576px) {
+  /* Biar semua section punya jarak cukup */
+  .glass-card {
+    margin: 15px 10px;
+    padding: 20px;
+  }
+
+  footer {
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Biar teks di dalam kartu tetap enak dibaca */
+  h3, h4 {
+    font-size: 1.2rem;
+  }
+  p, li {
+    font-size: 0.9rem;
+  }
+
+  /* Tombol di HP dibuat full width */
+  .btn-custom, 
+  .btn-success {
+    width: 100%;
+    max-width: 280px;
+    margin: 8px auto;
+    display: block;
+  }
+}
